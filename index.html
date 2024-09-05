@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Recommended meta tags -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+        <!-- PyScript CSS -->
+        <link rel="stylesheet" href="https://pyscript.net/releases/2024.1.1/core.css">
+        <link rel="stylesheet" href="../BingoGameTemplate/style.css">
+
+        <!-- This script tag bootstraps PyScript -->
+        <script type="module" src="https://pyscript.net/releases/2024.1.1/core.js"></script>
+
+        <!-- loading screen JavaScript closes the loading dialog when python is ready -->
+        <script type="module">
+            const loading = document.getElementById("loading")
+            addEventListener("py:ready", () => loading.close())
+            loading.showModal()
+        </script>
+
+
+        <!-- webpage title (shows in browser tab) -->
+        <title>Pyscript Web Bingo Game</title>
+    </head>
+
+    <body>
+        <dialog id="loading"><h1>Loading python environment...</h1></dialog>
+
+        <dialog id="win_game">
+            <h1>You Win!!</h1>
+            <button id="new_game" py-click="reset_game">New Game</button>
+        </dialog>
+
+        <section id="header">
+            <h1>BINGO!</h1>
+            <button id="reset_game" py-click="reset_game">Reset Game</button>
+        </section>
+
+        <section id="caller">
+            <h2>Caller</h2>
+            <!-- put your caller table here -->
+            <div>
+                <div id="current-container">
+                    <p id="current_call"></p>
+                    <button id="call_number" py-click="call_next">Call next</button>
+                </div>
+                <div id="history-container">
+                    <h3>Call History</h3>
+                    <p id="called_numbers"></p>
+                </div>
+            </div>
+        </section>
+
+
+        <section id="card">
+            <table id="bingo-card">
+        <thead>
+            <tr>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="cell" id="1_1"></td>
+                <td class="cell" id="1_2"></td>
+                <td class="cell" id="1_3"></td>
+                <td class="cell" id="1_4"></td>
+                <td class="cell" id="1_5"></td>
+            </tr>
+            <tr>
+                <td class="cell" id="2_1"></td>
+                <td class="cell" id="2_2"></td>
+                <td class="cell" id="2_3"></td>
+                <td class="cell" id="2_4"></td>
+                <td class="cell" id="2_5"></td>
+            </tr>
+            <tr>
+                <td class="cell" id="3_1"></td>
+                <td class="cell" id="3_2"></td>
+                <td class="cell" id="3_3"></td>
+                <td class="cell" id="3_4"></td>
+                <td class="cell" id="3_5"></td>
+            </tr>
+            <tr>
+                <td class="cell" id="4_1"></td>
+                <td class="cell" id="4_2"></td>
+                <td class="cell" id="4_3"></td>
+                <td class="cell" id="4_4"></td>
+                <td class="cell" id="4_5"></td>
+            </tr>
+            <tr>
+                <td class="cell" id="5_1"></td>
+                <td class="cell" id="5_2"></td>
+                <td class="cell" id="5_3"></td>
+                <td class="cell" id="5_4"></td>
+                <td class="cell" id="5_5"></td>
+            </tr>
+        </tbody>
+    </table>
+        </section>
+
+        <script type="py" src="../BingoGameTemplate/main.py" config="./pyscript.json"></script>
+    </body>
+</html>
