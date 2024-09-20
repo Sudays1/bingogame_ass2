@@ -5,12 +5,26 @@
 
 /* Highlight css classes - can be applied/removed with python code */
 .highlight-card {
-    color: red;
+    color: #AC89E3;
     font-weight: bold;
+    font-family: ;
 }
 
 .highlight-caller {
-    color: cornflowerblue;
+    color: #AC89E3;
     font-weight: bold;
 }
 
+body {
+    font-size: 25px;
+    margin-left:455px;
+}
+
+button {
+    font-size: 20px;
+}
+
+html {
+    background-color: #E1F7FD;
+    text: bold;
+}

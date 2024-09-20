@@ -22,10 +22,7 @@ def is_position_marked(x, y):
     return card_matrix[x-1][y-1]
 
 
-# mark the position on the card and
-# checks if a line has been created.
-# returns True if a line has been
-# created or False otherwise
+
 def mark_position(x, y):
     global card_matrix
     card_matrix[x-1][y-1] = 1
@@ -50,5 +47,3 @@ def mark_position(x, y):
         return True
 
     return False
-
-
